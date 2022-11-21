@@ -49,7 +49,7 @@
     "init": "gulp init",
     "bump": "gulp bump && gulp replaceVersion",
     "bump:major": "gulp bumpMajor && gulp replaceVersion",
-    "bundle": "npm run compile:css && npm run clean && dir-archiver --src . --dest ./dist/theme.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock",
+    "bundle": "npm run bump && npm run compile:css && npm run clean && dir-archiver --src . --dest ./dist/theme.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock",
     "bundle:major": "npm run bump:major && npm run compile:css && npm run clean && dir-archiver --src . --dest ./dist/theme.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
   }
 }

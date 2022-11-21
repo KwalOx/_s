@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
-
 _s
 ===
 
@@ -29,7 +27,15 @@ Installation
 - [Composer](https://getcomposer.org/)
 
 ### Quick Start
+#### Script
+Use the script version after `npm install`.
 
+1. Run `npm run init`
+2. Enter your project name (ex. underscore)
+
+Warning: There is no check to see if the name is valid.
+
+#### Manual
 Clone or download this repository, change its name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a six-step find and replace on the name in all the templates.
 
 1. Search for `'_s'` (inside single quotations) to capture the text domain and replace with: `'megatherium-is-awesome'`.
@@ -62,7 +68,10 @@ $ npm install
 - `npm run watch` : watches all SASS files and recompiles them to css when they change.
 - `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
 - `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
-- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
+- `bump` : Bump a minor version and update all files 
+- `bump:major` : Bump a major version and update all files 
+- `npm run bundle` : Update version with a minor bump and generates a .zip archive for distribution, excluding development and system files.
+- `npm run bundle:major` : Update version with a major bump and generates a .zip archive for distribution, excluding development and system files.
 
 Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
 
