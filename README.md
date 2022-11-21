@@ -1,5 +1,17 @@
-_s
+KwalOx_s
 ===
+
+# Fork
+This is a fork of [kuolas/_s](https://github.com/kuolas/_s) which is a fork of [Automattic/_s](https://github.com/Automattic/_s). What have I changed? A good question:
+
+- Working Sass (thanks to kuolas)
+- Automatic versioning when bundling
+- [Added initialization script](#script)
+- Changed ESLint to my liking
+- Removed woocommerce
+- Removed Github Actions
+
+---
 
 Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
