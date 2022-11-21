@@ -17,10 +17,14 @@
     "url": "https://github.com/Automattic/_s/issues"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^23.1.0",
+    "@wordpress/scripts": "^23.7.2",
     "dir-archiver": "^1.2.0",
-    "sass": "^1.52.1",
-    "rtlcss": "^3.5.0"
+    "gulp": "^4.0.2",
+    "gulp-bump": "^3.2.0",
+    "gulp-prompt": "^1.2.0",
+    "gulp-replace": "^1.1.3",
+    "rtlcss": "^3.5.0",
+    "sass": "^1.52.1"
   },
   "rtlcssConfig": {
     "options": {
@@ -37,10 +41,14 @@
   },
   "scripts": {
     "watch": "sass sass/:./css --style expanded -w",
-    "compile:css": "sass sass/:./css && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "compile:css": "sass sass/:./css",
     "compile:rtl": "rtlcss ./css/style.css ./css/style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+    "clean": "rm -rf dist && mkdir dist",
+    "bump": "gulp bump && gulp replaceVersion",
+    "bump:major": "gulp bumpMajor && gulp replaceVersion",
+    "bundle": "npm run compile:css && npm run clean && dir-archiver --src . --dest ./dist/theme.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock",
+    "bundle:major": "npm run bump:major && npm run compile:css && npm run clean && dir-archiver --src . --dest ./dist/theme.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
   }
 }
